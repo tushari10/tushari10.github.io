@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩国视频-韩国热门剧集、综艺节目与韩流音乐MV的在线观看平台，提供高清韩剧、K-Pop及韩国影视资讯。">
+    <meta name="keywords" content="韩国视频,韩剧,韩国综艺,韩流,K-Pop,MV,韩语视频">
+    <title>韩国视频-热门韩剧综艺与K-Pop音乐在线观看指南</title>
+    <style>
+        :root {
+            --primary-color: #e50914; /* Netflix-like red */
+            --primary-hover: #b20710;
+            --bg-body: #141414;
+            --bg-card: #1f1f1f;
+            --bg-nav: rgba(20, 20, 20, 0.95);
+            --text-main: #ffffff;
+            --text-secondary: #b3b3b3;
+            --spacing-unit: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: normal;
+        }
+
+        .section-title a:hover {
+            color: var(--text-main);
+        }
+
+        /* Header & Nav */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background-color: var(--bg-nav);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        .search-bar {
+            display: flex;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 5px 10px;
+        }
+
+        .search-bar input {
+            background: transparent;
+            border: none;
+            color: white;
+            outline: none;
+            width: 150px;
+        }
+
+        .search-bar button {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 500px;
+            background: url('https://picsum.photos/seed/korea_video_hero/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, var(--bg-body) 10%, transparent 90%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 600px;
+            padding-top: 60px;
+        }
+
+        .hero-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            font-size: 0.8rem;
+            border-radius: 2px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background-color: rgba(109, 109, 110, 0.7);
+            color: white;
+            margin-left: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(109, 109, 110, 0.4);
+        }
+
+        /* Content Sections */
+        main {
+            padding-top: 70px;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        /* Movie Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .video-card {
+            background-color: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .video-card:hover {
+            transform: scale(1.05);
+            z-index: 5;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .card-thumb {
+            position: relative;
+            padding-top: 140%; /* 5:7 Aspect Ratio */
+            background-color: #333;
+        }
+
+        .card-thumb img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .badge {
+            background-color: #333;
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-size: 0.7rem;
+        }
+
+        .badge.hot { background-color: #f5c518; color: #000; }
+
+        /* Category Tabs */
+        .tabs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: 1px solid #333;
+            color: var(--text-secondary);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            border-color: var(--text-main);
+            color: var(--text-main);
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* List Style for Variety Shows */
+        .show-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .show-item {
+            display: flex;
+            background-color: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: background-color 0.2s;
+        }
+
+        .show-item:hover {
+            background-color: #2a2a2a;
+        }
+
+        .show-thumb {
+            width: 200px;
+            flex-shrink: 0;
+        }
+
+        .show-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .show-details {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .show-title {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .show-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .show-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Music Section */
+        .music-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+        }
+
+        .music-chart {
+            background-color: var(--bg-card);
+            border-radius: 4px;
+            padding: 15px;
+        }
+
+        .chart-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .chart-rank {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-secondary);
+            width: 30px;
+            margin-right: 10px;
+        }
+
+        .chart-item:nth-child(1) .chart-rank { color: #e50914; }
+        .chart-item:nth-child(2) .chart-rank { color: #f5c518; }
+        .chart-item:nth-child(3) .chart-rank { color: #c0c0c0; }
+
+        .chart-info h4 { font-size: 1rem; margin-bottom: 4px; }
+        .chart-info span { font-size: 0.8rem; color: var(--text-secondary); }
+
+        .music-videos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .mv-card {
+            background-color: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .mv-thumb {
+            position: relative;
+            padding-top: 100%; /* 1:1 Aspect Ratio */
+        }
+        
+        .mv-thumb img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mv-title {
+            padding: 8px;
+            font-size: 0.9rem;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Info / FAQ Section */
+        .info-section {
+            background-color: #1a1a1a;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .faq-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 40px 0;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-content { flex-direction: column; height: auto; padding: 10px 0; }
+            nav ul { margin: 10px 0; }
+            .search-bar { display: none; } /* Simplified for mobile */
+            .music-layout { grid-template-columns: 1fr; }
+            .show-item { flex-direction: column; }
+            .show-thumb { width: 100%; height: 200px; }
+            .show-details { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-content">
+        <a href="#" class="logo">K-Video<span>Hub</span></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#drama">韩剧</a></li>
+                <li><a href="#variety">综艺</a></li>
+                <li><a href="#music">K-Pop</a></li>
+                <li><a href="#news">资讯</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="搜索韩国视频...">
+            <button>🔍</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-tag">本周热播</span>
+            <h1>黑暗荣耀：复仇篇</h1>
+            <p>全智贤、李到晛领衔主演。在这个充满背叛与救赎的故事中，隐藏多年的秘密将彻底爆发。高清完整版，立即观看。</p>
+            <div>
+                <button class="btn btn-primary">▶ 立即播放</button>
+                <button class="btn btn-secondary">+ 加入片单</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drama Section -->
+    <section id="drama" class="container section">
+        <div class="section-title">
+            <span>热门韩剧</span>
+            <a href="#">查看全部 ></a>
+        </div>
+        <div class="tabs">
+            <button class="tab-btn active">全部</button>
+            <button class="tab-btn">爱情</button>
+            <button class="tab-btn">悬疑</button>
+            <button class="tab-btn">历史</button>
+            <button class="tab-btn">古装</button>
+        </div>
+        <div class="video-grid">
+            <!-- Cards -->
+            <article class="video-card">
+                <div class="card-thumb">
+                    <img src="https://picsum.photos/seed/drama1/300/420" alt="韩剧海报">
+                    <div class="card-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">眼泪女王</div>
+                    <div class="card-meta">
+                        <span>2024</span>
+                        <span class="badge">16集</span>
+                    </div>
+                </div>
+            </article>
+            <article class="video-card">
+                <div class="card-thumb">
+                    <img src="https://picsum.photos/seed/drama2/300/420" alt="韩剧海报">
+                    <div class="card-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">背着善宰跑</div>
+                    <div class="card-meta">
+                        <span>2024</span>
+                        <span class="badge">16集</span>
+                    </div>
+                </div>
+            </article>
+            <article class="video-card">
+                <div class="card-thumb">
+                    <img src="https://picsum.photos/seed/drama3/300/420" alt="韩剧海报">
+                    <div class="card-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">泪之女王</div>
+                    <div class="card-meta">
+                        <span>2024</span>
+                        <span class="badge">16集</span>
+                    </div>
+                </div>
+            </article>
+            <article class="video-card">
+                <div class="card-thumb">
+                    <img src="https://picsum.photos/seed/drama4/300/420" alt="韩剧海报">
+                    <div class="card-overlay"><div class="play-icon">▶</div></div>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">刑警 1958</div>
+                    <div class="card-meta">
+                        <span>2023</span>
+                        <span class="badge">16集</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Variety Section -->
+    <section id="variety" class="container section">
+        <div class="section-title">
+            <span>热门综艺</span>
+            <a href="#">查看全部 ></a>
+        </div>
+        <div class="show-list">
+            <div class="show-item">
+                <div class="show-thumb">
+                    <img src="https://picsum.photos/seed/variety1/400/300" alt="Running Man">
+                </div>
+                <div class="show-details">
+                    <h3 class="show-title">Running Man - 新人篇</h3>
+                    <p class="show-desc">经典的奔跑综艺节目，嘉宾们在游戏中进行激烈的追逐与挑战，笑料不断，是韩国国民级综艺的代表作。</p>
+                    <div class="show-meta">
+                        <span class="badge hot">更新中</span>
+                        <span>每集 60 分钟</span>
+                        <span>已更新 500+ 集</span>
+                    </div>
+                </div>
+            </div>
+            <div class="show-item">
+                <div class="show-thumb">
+                    <img src="https://picsum.photos/seed/variety2/400/300" alt="Infinite Challenge">
+                </div>
+                <div class="show-details">
+                    <h3 class="show-title">无限挑战 - 河流特辑</h3>
+                    <p class="show-desc">展现艺人们不为人知的一面，从修路到开船，极限挑战带来无限欢乐与感动，韩国综艺的里程碑。</p>
+                    <div class="show-meta">
+                        <span class="badge">完结</span>
+                        <span>每集 80 分钟</span>
+                        <span>共 402 集</span>
+                    </div>
+                </div>
+            </div>
+            <div class="show-item">
+                <div class="show-thumb">
+                    <img src="https://picsum.photos/seed/variety3/400/300" alt="I Live Alone">
+                </div>
+                <div class="show-details">
+                    <h3 class="show-title">我独自生活</h3>
+                    <p class="show-desc">通过观察独居艺人的日常生活，展现韩国都市人的独居文化与生活态度，温馨治愈。</p>
+                    <div class="show-meta">
+                        <span class="badge">更新中</span>
+                        <span>每集 45 分钟</span>
+                        <span>已更新 300+ 集</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="container section">
+        <div class="section-title">
+            <span>K-Pop 音乐榜</span>
+            <a href="#">查看全部 ></a>
+        </div>
+        <div class="music-layout">
+            <div class="music-chart">
+                <h4 style="margin-bottom:15px;">本周 Top 5</h4>
+                <div class="chart-item">
+                    <div class="chart-rank">1</div>
+                    <div class="chart-info">
+                        <h4>Super Shy</h4>
+                        <span>NewJeans</span>
+                    </div>
+                </div>
+                <div class="chart-item">
+                    <div class="chart-rank">2</div>
+                    <div class="chart-info">
+                        <h4>Spot!</h4>
+                        <span>LE SSERAFIM</span>
+                    </div>
+                </div>
+                <div class="chart-item">
+                    <div class="chart-rank">3</div>
+                    <div class="chart-info">
+                        <h4>Queencard</h4>
+                        <span>(G)I-DLE</span>
+                    </div>
+                </div>
+                <div class="chart-item">
+                    <div class="chart-rank">4</div>
+                    <div class="chart-info">
+                        <h4>Spicy</h4>
+                        <span>IVE</span>
+                    </div>
+                </div>
+                <div class="chart-item">
+                    <div class="chart-rank">5</div>
+                    <div class="chart-info">
+                        <h4>Like Crazy</h4>
+                        <span>Jimin</span>
+                    </div>
+                </div>
+            </div>
+            <div class="music-videos">
+                <div class="mv-card">
+                    <div class="mv-thumb">
+                        <img src="https://picsum.photos/seed/music1/200/200" alt="MV">
+                    </div>
+                    <div class="mv-title">Super Shy (Official MV)</div>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-thumb">
+                        <img src="https://picsum.photos/seed/music2/200/200" alt="MV">
+                    </div>
+                    <div class="mv-title">Spot! (Official MV)</div>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-thumb">
+                        <img src="https://picsum.photos/seed/music3/200/200" alt="MV">
+                    </div>
+                    <div class="mv-title">I Am (Official MV)</div>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-thumb">
+                        <img src="https://picsum.photos/seed/music4/200/200" alt="MV">
+                    </div>
+                    <div class="mv-title">Antifragile (Official MV)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Information / Guide Section -->
+    <section class="info-section">
+        <div class="container section">
+            <div class="section-title">
+                <span>观看指南与资讯</span>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>如何观看韩国视频？</h3>
+                    <p>本站提供多源高清播放，支持PC端与移动端。您可以通过搜索剧名或点击分类标签快速找到想看的节目。部分内容可能需要会员权限。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>更新频率如何？</h3>
+                    <p>我们紧跟韩国电视台播出节奏，确保韩剧和综艺全集上线速度。K-Pop MV通常在发行当日即可获取。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>支持哪些设备？</h3>
+                    <p>完全兼容手机、平板电脑、笔记本电脑及智能电视。无需安装任何APP，直接浏览器访问即可流畅观看。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>K-VideoHub</h4>
+                <p>致力于提供最全、最新的韩国影视娱乐内容。连接全球韩流粉丝，共享视听盛宴。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">免责声明</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">2024韩剧</a></li>
+                    <li><a href="#">男团女团</a></li>
+                    <li><a href="#">搞笑综艺</a></li>
+                    <li><a href="#">经典老剧</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 K-VideoHub. All Rights Reserved. 本站内容仅供学习交流，不代表本站立场。</p>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+  </html>

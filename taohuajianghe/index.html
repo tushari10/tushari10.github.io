@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="桃花江核电站官方介绍页面，提供项目概况、安全理念、技术参数、环境影响及最新动态。了解中国自主三代核电技术华龙一号在桃花江的工程建设与运营情况。">
+    <meta name="keywords" content="桃花江核电站,华龙一号,核电,清洁能源,湖南核电,核安全">
+    <title>桃花江核电站-华龙一号清洁能源基地与安全运营展示</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #004e92;
+            --secondary-color: #000428;
+            --accent-color: #00b4db;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #f9fbfd;
+            --white: #ffffff;
+            --max-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: var(--white);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            /* Placeholder styling */
+            background-color: #ddd; 
+            object-fit: cover;
+            min-height: 400px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .about-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0, 78, 146, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .about-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        /* Technology Section */
+        .tech-section {
+            background-color: var(--white);
+        }
+
+        .tech-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .tech-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .tech-item.reverse {
+            direction: rtl;
+        }
+
+        .tech-item.reverse .tech-text {
+            direction: ltr;
+        }
+
+        .tech-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .tech-text ul {
+            margin-top: 20px;
+        }
+
+        .tech-text li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+
+        .tech-text li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .tech-img {
+            background-color: #eee;
+            border-radius: 8px;
+            min-height: 250px;
+            /* Placeholder styling */
+            background-image: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" xmlns="http://www.w3.org/2000/svg"><rect width="100%25" height="100%25" fill="%23e0e0e0"/><text x="50%25" y="50%25" font-family="sans-serif" font-size="20" fill="%23999" text-anchor="middle" dy=".3em">技术示意图</text></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Safety Section */
+        .safety-section {
+            background-color: #f0f4f8;
+        }
+
+        .safety-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .safety-item {
+            background: var(--white);
+            padding: 25px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .safety-item h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Environment Section */
+        .env-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .env-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .env-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: brightness(0.9);
+        }
+
+        .env-content {
+            padding: 20px;
+        }
+
+        .env-content h4 {
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .tech-item, .tech-item.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+
+            .env-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color)"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                桃花江<span>核电站</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#about">项目概况</a></li>
+                    <li><a href="#technology">核心技术</a></li>
+                    <li><a href="#safety">安全体系</a></li>
+                    <li><a href="#environment">绿色能源</a></li>
+                    <li><a href="#contact" class="cta-btn">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>华龙一号<br>清洁能源的新引擎</h1>
+                    <p>桃花江核电站是湖南省首个核电项目，采用全球领先的第三代核电技术，为区域经济发展提供稳定、清洁的电力支持，助力“双碳”目标实现。</p>
+                    <a href="#about" class="cta-btn" style="background:var(--accent-color); color:#000;">了解更多项目详情</a>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>2×1200MW</h3>
+                            <p>单机装机容量</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>1.2亿</h3>
+                            <p>年上网电量(亿度)</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>90%</h3>
+                            <p>减少碳排放</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/nuclearplant/600/400.jpg" alt="桃花江核电站全景示意图">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>项目概况</h2>
+                    <p>桃花江核电站位于湖南省益阳市桃江县，是湖南省“十三五”能源发展规划的重点项目，也是我国核电建设的重要布局之一。</p>
+                </div>
+                <div class="about-grid">
+                    <article class="about-card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        </div>
+                        <h3>地理位置</h3>
+                        <p>选址于益阳市桃江县灰山港镇，紧邻桃江火车站和杭瑞高速，具备良好的交通运输条件和地质稳定性，适合大规模工业建设。</p>
+                    </article>
+                    <article class="about-card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        </div>
+                        <h3>建设规划</h3>
+                        <p>一期工程建设2台华龙一号百万千瓦级压水堆核电机组，采用双层安全壳设计，具备极高的抗震、防洪能力，确保核安全万无一失。</p>
+                    </article>
+                    <article class="about-card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3>安全标准</h3>
+                        <p>严格遵循国际原子能机构（IAEA）安全标准，采用纵深防御理念，确保核电站在全寿期内的安全稳定运行。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Section -->
+        <section id="technology" class="tech-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心技术</h2>
+                    <p>采用具有完全自主知识产权的“华龙一号”三代核电技术，融合了国际先进核能技术与中国特色安全理念。</p>
+                </div>
+                <div class="tech-container">
+                    <div class="tech-item">
+                        <div class="tech-text">
+                            <h3>能动与非能动相结合的安全系统</h3>
+                            <p>华龙一号创新性地采用了能动与非能动相结合的专设安全系统，在发生事故时，能够自动执行安全功能，有效缓解堆芯热量。</p>
+                            <ul>
+                                <li>双层安全壳设计，增强外部冲击防护</li>
+                                <li>燃料包壳温度控制技术</li>
+                                <li>严重事故预防与缓解策略</li>
+                            </ul>
+                        </div>
+                        <div class="tech-img" style="background-image: url('https://picsum.photos/seed/tech1/600/350.jpg');"></div>
+                    </div>
+                    <div class="tech-item reverse">
+                        <div class="tech-text">
+                            <h3>先进行波堆芯设计</h3>
+                            <p>采用先进的先进行波堆芯物理设计，确保反应堆在所有运行工况下保持稳定，并具备优异的固有安全性。</p>
+                            <ul>
+                                <li>100%福岛事故后改进措施</li>
+                                <li>低富集度铀-235燃料</li>
+                                <li>先进的数字化仪控系统</li>
+                            </ul>
+                        </div>
+                        <div class="tech-img" style="background-image: url('https://picsum.photos/seed/tech2/600/350.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety Section -->
+        <section id="safety" class="safety-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>安全体系</h2>
+                    <p>核安全是核电发展的生命线。桃花江核电站建立了全方位、多层次的安全管理体系。</p>
+                </div>
+                <div class="safety-list">
+                    <div class="safety-item">
+                        <h4>源头预防</h4>
+                        <p>严格的设计审查与设备采购管理，确保每一台设备都符合最高安全标准。</p>
+                    </div>
+                    <div class="safety-item">
+                        <h4>过程控制</h4>
+                        <p>实施标准化施工与严格的质保体系，确保工程建设质量可控。</p>
+                    </div>
+                    <div class="safety-item">
+                        <h4>应急准备</h4>
+                        <p>制定完善的核事故应急预案，定期开展应急演练，确保公众安全。</p>
+                    </div>
+                    <div class="safety-item">
+                        <h4>环境监测</h4>
+                        <p>建立多层次的辐射环境监测网，实时监控排放数据，确保环境安全。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Environment Section -->
+        <section id="environment">
+            <div class="container">
+                <div class="section-header">
+                    <h2>绿色能源贡献</h2>
+                    <p>作为清洁能源的重要组成部分，桃花江核电站将为湖南省及周边地区提供稳定的电力支撑，助力区域可持续发展。</p>
+                </div>
+                <div class="env-grid">
+                    <div class="env-card">
+                        <img src="https://picsum.photos/seed/powergrid/400/300.jpg" alt="电力输送网络">
+                        <div class="env-content">
+                            <h4>高效能源供应</h4>
+                            <p>机组投运后，将显著缓解华中地区电力供需矛盾，提升电网调峰能力。</p>
+                        </div>
+                    </div>
+                    <div class="env-card">
+                        <img src="https://picsum.photos/seed/forest/400/300.jpg" alt="生态环境">
+                        <div class="env-content">
+                            <h4>低碳减排</h4>
+                            <p>相比同等规模的燃煤电厂，每年可减少二氧化碳排放约1000万吨。</p>
+                        </div>
+                    </div>
+                    <div class="env-card">
+                        <img src="https://picsum.photos/seed/city/400/300.jpg" alt="经济发展">
+                        <div class="env-content">
+                            <h4>产业带动</h4>
+                            <p>核电站建设及运营将带动当地上下游产业链发展，创造大量就业机会。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于桃花江核电站</h4>
+                    <p style="color:#ccc; font-size:0.9rem; line-height:1.8;">
+                        桃花江核电站致力于为湖南及周边地区提供安全、清洁、高效的电力能源，是推动地方经济绿色发展的核心动力。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#about">项目概况</a></li>
+                        <li><a href="#technology">技术参数</a></li>
+                        <li><a href="#safety">安全公告</a></li>
+                        <li><a href="#environment">环境影响评价</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>地址：湖南省益阳市桃江县灰山港镇</li>
+                        <li>电话：0737-XXXXXXX</li>
+                        <li>邮箱：info@taohuajiang.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 桃花江核电站展示页面. All Rights Reserved. 本页面为概念设计，非官方实时运营网站。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>

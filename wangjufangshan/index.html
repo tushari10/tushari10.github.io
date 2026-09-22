@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="网聚房山招聘 - 房山区本地化招聘求职服务平台，提供最新的房山企业招聘信息、房产中介、餐饮酒店、工厂技工及行政文职岗位，助力求职者快速找到理想工作。">
+    <meta name="keywords" content="网聚房山招聘, 房山招聘, 房山找工作, 北京房山招聘信息, 房山人才网">
+    <title>网聚房山招聘 - 房山区本地企业招聘与求职服务平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f0f4f8;
+            --accent-color: #ff9800;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-white: #ffffff;
+            --border-color: #e0e0e0;
+            --container-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background-color: #f4f4f4;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            padding: 8px 0;
+        }
+
+        .top-bar .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main-header {
+            padding: 15px 0;
+        }
+
+        .main-header .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+            margin-left: 5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,86,179,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,86,179,0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.85), rgba(0, 68, 148, 0.9)), url('https://picsum.photos/seed/fangshan_work/1920/600.jpg') no-repeat center center/cover;
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-box {
+            background: white;
+            padding: 15px;
+            border-radius: 50px;
+            display: inline-flex;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 0 20px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-box button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 40px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: #e68900;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Section Title */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-more {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .section-more:hover {
+            color: var(--primary-color);
+        }
+
+        /* Job Grid */
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .job-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid transparent;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: #e0e0e0;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .company-logo {
+            width: 50px;
+            height: 50px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .job-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .company-name {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .job-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background-color: #eef2f7;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .tag.salary {
+            background-color: #fff3e0;
+            color: #e65100;
+        }
+
+        .job-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .salary-highlight {
+            color: #e65100;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* Feature Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 60px 0;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .feature-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Job Categories */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .category-item {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid #eee;
+        }
+
+        .category-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .category-item i {
+            font-style: normal;
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* Hot Companies */
+        .company-slider {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scrollbar-width: thin;
+        }
+
+        .company-card {
+            min-width: 200px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .company-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-bar { display: none; }
+            .nav-menu { display: none; }
+            .header-actions .btn { display: none; }
+            .hero h1 { font-size: 1.8rem; }
+            .search-box { flex-direction: column; border-radius: 10px; }
+            .search-box input { width: 100%; margin-bottom: 10px; }
+            .search-box button { width: 100%; border-radius: 8px; }
+            .features { grid-template-columns: 1fr 1fr; }
+            .category-grid { grid-template-columns: repeat(3, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <span>欢迎来到网聚房山招聘，连接房山企业与求职者</span>
+            <div>
+                <a href="#">登录</a> | <a href="#">注册</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="main-header">
+            <div class="container">
+                <a href="#" class="logo">网聚<span>房山</span></a>
+                <nav class="nav-menu">
+                    <a href="#" class="active">首页</a>
+                    <a href="#">最新招聘</a>
+                    <a href="#">房产中介</a>
+                    <a href="#">餐饮酒店</a>
+                    <a href="#">工厂技工</a>
+                    <a href="#">推荐职位</a>
+                </nav>
+                <div class="header-actions">
+                    <a href="#" class="btn btn-outline">企业登录</a>
+                    <a href="#" class="btn btn-primary">发布职位</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>发现房山好工作</h1>
+            <p>专注房山区本地招聘服务，汇聚燕山、良乡、窦店等区域优质企业，为您提供安全、高效、真实的求职平台。</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索职位关键词，如：会计、销售、保安...">
+                <button>立即搜索</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Features -->
+        <section class="features">
+            <div class="feature-item">
+                <span class="feature-icon">🏢</span>
+                <h3 class="feature-title">企业直招</h3>
+                <p class="feature-desc">房山本地企业直接发布，无中介费</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🛡️</span>
+                <h3 class="feature-title">安全可靠</h3>
+                <p class="feature-desc">实名认证，保障求职者权益</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🚀</span>
+                <h3 class="feature-title">快速入职</h3>
+                <p class="feature-desc">简历筛选快，面试安排灵活</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">💬</span>
+                <h3 class="feature-title">在线沟通</h3>
+                <p class="feature-desc">企业HR在线回复，求职更高效</p>
+            </div>
+        </section>
+
+        <!-- Job Categories -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">热门招聘分类</h2>
+                <a href="#" class="section-more">查看全部分类 &gt;</a>
+            </div>
+            <div class="category-grid">
+                <div class="category-item">销售精英</div>
+                <div class="category-item">房产中介</div>
+                <div class="category-item">餐饮服务</div>
+                <div class="category-item">工厂普工</div>
+                <div class="category-item">行政文员</div>
+                <div class="category-item">快递物流</div>
+                <div class="category-item">保安保洁</div>
+                <div class="category-item">美容美发</div>
+                <div class="category-item">厨师帮厨</div>
+                <div class="category-item">会计财务</div>
+                <div class="category-item">司机岗位</div>
+                <div class="category-item">其他兼职</div>
+            </div>
+        </section>
+
+        <!-- Latest Jobs -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">最新发布职位</h2>
+                <a href="#" class="section-more">查看更多职位 &gt;</a>
+            </div>
+            <div class="job-grid">
+                <!-- Job 1 -->
+                <article class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">门店店长</h3>
+                            <div class="company-name">北京房山某某餐饮管理有限公司</div>
+                        </div>
+                        <img src="https://picsum.photos/seed/logo1/50/50" alt="Logo" class="company-logo">
+                    </div>
+                    <div class="job-tags">
+                        <span class="tag">房山良乡</span>
+                        <span class="tag">经验不限</span>
+                        <span class="tag salary">5k-8k</span>
+                    </div>
+                    <div class="job-footer">
+                        <span>昨天</span>
+                        <span>234人看过</span>
+                    </div>
+                </article>
+
+                <!-- Job 2 -->
+                <article class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">房产经纪人</h3>
+                            <div class="company-name">链家地产（房山分公司）</div>
+                        </div>
+                        <img src="https://picsum.photos/seed/logo2/50/50" alt="Logo" class="company-logo">
+                    </div>
+                    <div class="job-tags">
+                        <span class="tag">长阳/CBD</span>
+                        <span class="tag">底薪4000+提成</span>
+                        <span class="tag salary">6k-12k</span>
+                    </div>
+                    <div class="job-footer">
+                        <span>今天</span>
+                        <span>567人看过</span>
+                    </div>
+                </article>
+
+                <!-- Job 3 -->
+                <article class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">会计助理</h3>
+                            <div class="company-name">房山区某某商贸公司</div>
+                        </div>
+                        <img src="https://picsum.photos/seed/logo3/50/50" alt="Logo" class="company-logo">
+                    </div>
+                    <div class="job-tags">
+                        <span class="tag">窦店工业园</span>
+                        <span class="tag">大专学历</span>
+                        <span class="tag salary">4k-6k</span>
+                    </div>
+                    <div class="job-footer">
+                        <span>2天前</span>
+                        <span>89人看过</span>
+                    </div>
+                </article>
+
+                <!-- Job 4 -->
+                <article class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">生产操作工</h3>
+                            <div class="company-name">北京某某汽车零部件厂</div>
+                        </div>
+                        <img src="https://picsum.photos/seed/logo4/50/50" alt="Logo" class="company-logo">
+                    </div>
+                    <div class="job-tags">
+                        <span class="tag">燕山石化</span>
+                        <span class="tag">包吃住</span>
+                        <span class="tag salary">5.5k-7k</span>
+                    </div>
+                    <div class="job-footer">
+                        <span>3天前</span>
+                        <span>120人看过</span>
+                    </div>
+                </article>
+
+                <!-- Job 5 -->
+                <article class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">物业保安</h3>
+                            <div class="company-name">万科物业（房山项目）</div>
+                        </div>
+                        <img src="https://picsum.photos/seed/logo5/50/50" alt="Logo" class="company-logo">
+                    </div>
+                    <div class="job-tags">
+                        <span class="tag">长阳山水</span>
+                        <span class="tag">退伍军人优先</span>
+                        <span class="tag salary">4k-5k</span>
+                    </div>
+                    <div class="job-footer">
+                        <span>4天前</span>
+                        <span>345人看过</span>
+                    </div>
+                </article>
+
+                <!-- Job 6 -->
+                <article class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">客服专员</h3>
+                            <div class="company-name">北京某某通讯器材销售中心</div>
+                        </div>
+                        <img src="https://picsum.photos/seed/logo6/50/50" alt="Logo" class="company-logo">
+                    </div>
+                    <div class="job-tags">
+                        <span class="tag">良乡大学城</span>
+                        <span class="tag">形象好气质佳</span>
+                        <span class="tag salary">4k-6k</span>
+                    </div>
+                    <div class="job-footer">
+                        <span>5天前</span>
+                        <span>210人看过</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Hot Companies -->
+        <section style="margin-top: 60px;">
+            <div class="section-header">
+                <h2 class="section-title">热门招聘企业</h2>
+                <a href="#" class="section-more">企业入驻 &gt;</a>
+            </div>
+            <div class="company-slider">
+                <div class="company-card">
+                    <img src="https://picsum.photos/seed/comp1/100/100" alt="Company">
+                    <h4>某某4S店</h4>
+                    <p class="text-sm text-gray">汽车销售/售后</p>
+                </div>
+                <div class="company-card">
+                    <img src="https://picsum.photos/seed/comp2/100/100" alt="Company">
+                    <h4>某某连锁超市</h4>
+                    <p class="text-sm text-gray">零售/管理</p>
+                </div>
+                <div class="company-card">
+                    <img src="https://picsum.photos/seed/comp3/100/100" alt="Company">
+                    <h4>某某建筑公司</h4>
+                    <p class="text-sm text-gray">工程/施工</p>
+                </div>
+                <div class="company-card">
+                    <img src="https://picsum.photos/seed/comp4/100/100" alt="Company">
+                    <h4>某某教育培训</h4>
+                    <p class="text-sm text-gray">教育/辅导</p>
+                </div>
+                <div class="company-card">
+                    <img src="https://picsum.photos/seed/comp5/100/100" alt="Company">
+                    <h4>某某物流园</h4>
+                    <p class="text-sm text-gray">物流/仓储</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section style="margin-top: 60px; background: white; padding: 40px; border-radius: 8px; border-left: 5px solid var(--accent-color);">
+            <h3 style="margin-bottom: 20px; color: var(--text-main);">求职安全小贴士</h3>
+            <p style="margin-bottom: 15px; color: var(--text-light);">在网聚房山招聘找工作时，请注意辨别信息真伪。正规企业招聘不会在面试前收取任何费用（如体检费、押金等）。如遇此类情况，请务必提高警惕，谨防受骗。</p>
+            <ul style="color: var(--text-light); padding-left: 20px;">
+                <li style="margin-bottom: 8px;">核实企业营业执照信息。</li>
+                <li style="margin-bottom: 8px;">面试地点应在企业注册地址或正规办公场所。</li>
+                <li>保护个人隐私，不随意透露身份证号、银行卡密码等敏感信息。</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="color: white; margin-bottom: 20px; display:inline-block;">网聚<span style="color: var(--accent-color);">房山</span></a>
+                <p style="font-size: 0.9rem; line-height: 1.8;">
+                    网聚房山招聘致力于为房山区及周边地区的企业与求职者搭建高效、便捷的沟通桥梁。我们专注于本地化服务，帮助企业在房山招到合适的人才，帮助人才在房山找到理想的工作。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">最新职位</a></li>
+                    <li><a href="#">企业入驻</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>服务支持</h4>
+                <ul>
+                    <li><a href="#">帮助中心</a></li>
+                    <li><a href="#">发布招聘</a></li>
+                    <li><a href="#">求职指南</a></li>
+                    <li><a href="#">联系客服</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li>电话：010-88888888</li>
+                    <li>邮箱：hr@fangshan-zp.com</li>
+                    <li>地址：北京市房山区良乡长阳镇</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 网聚房山招聘 版权所有 | 京ICP备XXXXXXXX号</p>
+        </div>
+    </footer>
+
+</body>
+                          </html>

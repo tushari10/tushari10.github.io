@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="bmwx1图片 - 宝马X1（F49）高清外观内饰图库，购车前必看实拍图，详细参数配置与色彩展示。">
+    <meta name="keywords" content="bmwx1图片,宝马X1实拍,宝马X1内饰,宝马X1外观,宝马X1配置">
+    <title>bmwx1图片 - 宝马X1高清实拍图库与配置展示</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bmw-blue: #0066B1;
+            --bmw-dark: #1A1A1A;
+            --bmw-gray: #F5F5F5;
+            --text-main: #333333;
+            --text-light: #666666;
+            --spacing-unit: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--bmw-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--bmw-blue);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--bmw-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            color: var(--bmw-dark);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            background-color: var(--bmw-gray);
+            padding: 20px 0;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+
+        .filter-options {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--bmw-blue);
+            color: #fff;
+            border-color: var(--bmw-blue);
+        }
+
+        /* Image Grid */
+        .gallery-section {
+            padding-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            padding-left: 15px;
+            border-left: 4px solid var(--bmw-blue);
+            display: flex;
+            align-items: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #eee;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 12px;
+            color: var(--bmw-blue);
+            background: rgba(0, 102, 177, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Specs Section */
+        .specs-section {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .spec-item {
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .spec-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--bmw-blue);
+            margin-bottom: 5px;
+        }
+
+        .spec-label {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Color Palette */
+        .color-section {
+            padding: 60px 0;
+        }
+
+        .color-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .color-item {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .color-item:hover {
+            transform: scale(1.1);
+        }
+
+        .color-name {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            white-space: nowrap;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bmw-dark);
+            color: #fff;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <div class="logo">BMW<span>X1</span>图库</div>
+        <nav>
+            <ul>
+                <li><a href="#exterior">外观实拍</a></li>
+                <li><a href="#interior">内饰细节</a></li>
+                <li><a href="#specs">参数配置</a></li>
+                <li><a href="#colors">车身配色</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>bmwx1图片 - 宝马X1 实拍鉴赏</h1>
+            <p>为您呈现宝马X1（F49）最新款式的高清外观、内饰及配置细节图片，助您全面了解这款豪华紧凑型SUV。</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <div class="container">
+        <div class="filter-bar">
+            <div class="filter-options">
+                <button class="filter-btn active">全部图片</button>
+                <button class="filter-btn">外观设计</button>
+                <button class="filter-btn">内饰空间</button>
+                <button class="filter-btn">侧面视角</button>
+                <button class="filter-btn">前脸特写</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exterior Gallery -->
+    <section id="exterior" class="gallery-section container">
+        <h2 class="section-title">外观实拍</h2>
+        <div class="grid-container">
+            <!-- Card 1 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/seed/bmw1/400/300" alt="宝马X1外观实拍">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">外观设计</span>
+                    <h3 class="card-title">宝马X1 45Li 尊享型</h3>
+                    <p class="card-desc">前脸采用双肾进气格栅设计，搭配天使眼LED大灯，整体造型更加犀利动感。</p>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/seed/bmw2/400/300" alt="宝马X1侧面视角">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">侧面视角</span>
+                    <h3 class="card-title">侧面车身线条</h3>
+                    <p class="card-desc">流线型车身设计，短前悬长后悬布局，营造出的运动姿态，轮毂尺寸为18英寸。</p>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/seed/bmw3/400/300" alt="宝马X1尾部设计">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">尾部设计</span>
+                    <h3 class="card-title">L型LED尾灯组</h3>
+                    <p class="card-desc">贯穿式尾灯设计，点亮后辨识度极高，双边共两出排气布局彰显运动属性。</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Interior Gallery -->
+    <section id="interior" class="gallery-section container">
+        <h2 class="section-title">内饰空间</h2>
+        <div class="grid-container">
+            <!-- Card 4 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/seed/bmw4/400/300" alt="宝马X1驾驶舱">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">驾驶舱</span>
+                    <h3 class="card-title">环抱式座舱设计</h3>
+                    <p class="card-desc">悬浮式12.3英寸全液晶仪表盘与10.25英寸中控屏，科技感十足。</p>
+                </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/seed/bmw5/400/300" alt="宝马X1座椅材质">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">座椅材质</span>
+                    <h3 class="card-title">真皮座椅舒适度</h3>
+                    <p class="card-desc">前排座椅支持加热、通风及电动调节，提供良好的腰部支撑。</p>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/seed/bmw6/400/300" alt="宝马X1后排空间">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">后排空间</span>
+                    <h3 class="card-title">后排腿部空间表现</h3>
+                    <p class="card-desc">得益于短前悬设计，后排腿部空间宽敞，适合家庭出行使用。</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Specs Section -->
+    <section id="specs" class="specs-section">
+        <div class="container">
+            <h2 class="section-title">核心参数一览</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-value">1.5T</div>
+                    <div class="spec-label">发动机排量</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-value">170kW</div>
+                    <div class="spec-label">最大功率</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-value">245N·m</div>
+                    <div class="spec-label">最大扭矩</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-value">8.3s</div>
+                    <div class="spec-label">0-100km/h加速</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-value">5.1L</div>
+                    <div class="spec-label">综合油耗(L/100km)</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-value">5060mm</div>
+                    <div class="spec-label">车长</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Color Section -->
+    <section id="colors" class="color-section container">
+        <h2 class="section-title">热门车身配色</h2>
+        <div class="color-grid">
+            <div class="color-item" style="background-color: #E6E6E6;" title="矿石白">
+                <span class="color-name">矿石白</span>
+            </div>
+            <div class="color-item" style="background-color: #333333;" title="炭黑">
+                <span class="color-name">炭黑</span>
+            </div>
+            <div class="color-item" style="background-color: #D2B48C;" title="丹泉石蓝">
+                <span class="color-name">丹泉石蓝</span>
+            </div>
+            <div class="color-item" style="background-color: #C0C0C0;" title="矿石灰">
+                <span class="color-name">矿石灰</span>
+            </div>
+            <div class="color-item" style="background-color: #A52A2A;" title="布鲁克林红">
+                <span class="color-name">布鲁克林红</span>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">图片版权声明</a>
+            <a href="#">联系我们</a>
+            <a href="#">隐私政策</a>
+        </div>
+        <p class="copyright">Copyright © 2023 BMW X1 图片鉴赏站. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
